@@ -1,0 +1,43 @@
+{
+  "name": "freechatgptdesktop",
+  "version": "1.0.0",
+  "description": "A desktop APP for FreeChatGPT",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build-free-chat-gpt": "cd third_parts/FreeChatGPT && npm run build",
+    "build": "electron-builder"
+  },
+  "author": "Junity",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "copyfiles": "latest",
+    "electron": "^23.1.4",
+    "electron-builder": "latest"
+  },
+  "dependencies": {
+    "mime": "^3.0.0"
+  },
+  "build": {
+    "productName": "Free ChatGPT Desktop",
+    "extraResources": [
+      {
+        "from": "third_parts/FreeChatGPT/dist/",
+        "to": "static/"
+      },
+      {
+        "from": "icon.ico",
+        "to": "icon.ico"
+      }
+    ],
+    "win": {
+      "icon": "icon.ico"
+    },
+    "linux": {
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "icon": "icon.ico"
+    }
+  }
+}
